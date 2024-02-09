@@ -1,0 +1,50 @@
+# Compiled Object files
+*.suo
+*.obj
+*.o
+*.lib
+*.a
+*.dll
+*.exe
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lai
+*.lai
+*.lo
+*.pc
+*.so
+*.so
+*.so
+*.so
+*.so
+*.so
+*.so
+*.so
+*.so
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.swp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
