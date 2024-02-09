@@ -6,7 +6,7 @@
 ;              the message "Hello world!" on screen.
 ; ---------------------------------------------------------
 .model small
-.stack
+.stack 100h
 .data
   menu_message db 'Choose an option:', 0ah, '1. Add', 0ah, '2. Subtract', 0ah, '3. Multiply', 0ah, '4. Divide', 0ah, '5. Exit', 0ah, '$'
   
@@ -107,8 +107,11 @@
     mov second_number, al
 
     mov al, first_number
+    mov bl, second_number
+
+    mov al, first_number
     sub al, second_number
-    sub al, 30h
+    add al, 30h
     mov result, al
 
     mov ah, 9 
