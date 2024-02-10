@@ -51,6 +51,12 @@
 
     cmp menu_option, 2
     je res
+    
+    cmp menu_option, 3
+    je mult
+  
+    cmp menu_option, 4
+    je divi
 
     jmp invalid_option
   sum: 
@@ -123,6 +129,72 @@
     int 21h
 
     jmp exit
+
+mult:
+  mov ah, 9
+  lea dx, message_first_number
+  int 21h
+
+  mov ah, 1
+  int 21h
+  sub al, 30h
+  mov first_number, al
+
+  mov ah, 9
+  lea dx, message_second_number
+  int 21h
+
+  mov ah, 1
+  int 21h
+  sub al, 30h
+  mov second_number, al
+    
+  mov al, first_number
+  mul al, second_number
+  add al, 30h
+  mov result, al
+
+  mov ah, 9 
+  lea dx, message_result
+  int 21h
+
+  mov ah, 2
+  mov dl, result
+  int 21h
+
+  jmp start
+
+divi:
+  mov ah, 9
+  lea dx, message_first_number
+  int 21h
+
+  mov ah, 1
+  int 21h
+  sub al, 30h
+  mov first_number, al
+
+  mov ah, 9
+  lea dx, message_second_number
+  int 21h
+
+  mov ah, 1
+  int 21h
+  sub al, 30h
+  mov second_number, al
+
+  mov al, first_number
+  div al, second_number
+  add al, 30h
+  mov result, al
+
+  mov ah, 9 
+  lea dx, message_result
+  int 21h
+
+  mov ah, 2
+  mov dl, result
+  int 21h
 
   invalid_option:
     mov ah, 9
